@@ -24,6 +24,8 @@ Gem::Specification.new do |spec|
   spec.add_dependency "rails", ">= 7.0.4"
   spec.add_dependency "govuk-components", "4.1.1"
   spec.add_dependency "govuk_design_system_formbuilder"
+  spec.add_dependency "phonelib"
+  spec.add_dependency "uk_postcode"
 
   spec.add_development_dependency "rspec-rails"
 end

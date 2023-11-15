@@ -3,9 +3,6 @@ module Irp
     def index; end
     def closed; end
     def sitemap; end
-
-    def ineligible
-      session.delete("irp_form_id")
-    end
+    def ineligible; end
   end
 end

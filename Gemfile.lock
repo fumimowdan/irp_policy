@@ -4,7 +4,9 @@ PATH
     irp (0.1.0)
       govuk-components (= 4.1.1)
       govuk_design_system_formbuilder
+      phonelib
       rails (>= 7.0.4)
+      uk_postcode
 
 GEM
   remote: https://rubygems.org/
@@ -139,6 +141,7 @@ GEM
     nokogiri (1.15.4-x86_64-linux)
       racc (~> 1.4)
     pagy (6.2.0)
+    phonelib (0.8.5)
     psych (5.1.1.1)
       stringio
     racc (1.7.3)
@@ -215,6 +218,7 @@ GEM
     timeout (0.4.1)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    uk_postcode (2.1.8)
     view_component (3.5.0)
       activesupport (>= 5.2.0, < 8.0)
       concurrent-ruby (~> 1.0)

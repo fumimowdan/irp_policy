@@ -28,6 +28,20 @@ $ gem install irp
 
 
 Add `config/initializers/irp_policy.rb` to link claim, task clasess.
+```ruby
+Irp.config_class = "PolicyConfiguration"
+Irp.claim_class = "Claim"
+Irp.task_class = "Task"
+Irp.school_class = "School"
+```
+
+Copy the migrations
+```bash
+$ rails irp:install:migrations
+$ rails db:migrate
+```
+
+
 
 
 ## Contributing
