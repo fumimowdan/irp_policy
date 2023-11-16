@@ -15,4 +15,12 @@ Irp::Engine.routes.draw do
   get "/ineligible-salaried-course", to: "pages#ineligible_salaried_course"
   get "/closed", to: "pages#closed"
   get "/privacy", to: "pages#privacy"
+
+  get "/report/:claim_id", to: "reports#show", as: "report"
+
+  # constraints(Irp::SchoolStepFlow) do
+  #   get "/school/:name", to: "school#new", as: "school"
+  #   post "/school/:name", to: "school#create"
+  #   patch "/school/:name", to: "school#update"
+  # end
 end

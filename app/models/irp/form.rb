@@ -1,5 +1,16 @@
 module Irp
   class Form < ApplicationRecord
+    def academic_year
+      # TODO: fix form academic year
+      '2023/2024'
+    end
+
+    def school
+      # TODO: add belongs_to :school to form model
+      school_id = "1d9fd4ea-bba3-5421-9338-8fa3305a7e6c"
+      Irp.school_class.find_by(id: school_id)
+    end
+
     def teacher_route?
       application_route == "teacher"
     end

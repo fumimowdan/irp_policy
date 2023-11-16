@@ -6,6 +6,7 @@ PATH
       govuk_design_system_formbuilder
       phonelib
       rails (>= 7.0.4)
+      rubyXL (~> 3.4)
       uk_postcode
 
 GEM
@@ -205,6 +206,10 @@ GEM
       rspec-support (~> 3.12)
     rspec-support (3.12.1)
     ruby2_keywords (0.0.5)
+    rubyXL (3.4.25)
+      nokogiri (>= 1.10.8)
+      rubyzip (>= 1.3.0)
+    rubyzip (2.3.2)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)

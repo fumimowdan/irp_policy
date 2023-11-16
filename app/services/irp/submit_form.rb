@@ -43,16 +43,10 @@ module Irp
       end
     end
 
-    def school
-      school_id = "1d9fd4ea-bba3-5421-9338-8fa3305a7e6c"
-      # @school = Irp.school_class.find_by(id: form.school_id)
-      @school = Irp.school_class.find_by(id: school_id)
-    end
-
     def create_eligibility
       @eligibility = Irp.eligibility_class.create!(
-        school_id: school.id,
-        policy_name: "Irp",
+        school_id:    form.school.id,
+        policy_name:  "Irp",
         award_amount: 10_000
       )
     end
@@ -68,7 +62,7 @@ module Irp
         date_of_birth:    form.date_of_birth,
         email_address:    form.email_address,
         has_student_loan: form.student_loan,
-        academic_year:    '2023/2024',
+        academic_year:    form.academic_year,
         submitted_at:     Time.zone.now,
         reference:        Irp.claim_class.new.send(:unique_reference),
         eligibility:      @eligibility,
@@ -77,9 +71,8 @@ module Irp
 
     def create_claim_tasks
       @tasks = [
-        :identity_confirmation,
-       # :home_office,
-       # :school_employment
+        :home_office,
+        :school_checks,
       ].each do |task_name|
         Irp.task_class.new(
           claim: claim,

@@ -1,6 +1,7 @@
 require "irp/version"
 require "irp/engine"
 require "irp/claim_adapter"
+require "irp/admin_tasks_presenter"
 
 module Irp
   mattr_accessor :claim_class

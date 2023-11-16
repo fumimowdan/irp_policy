@@ -26,6 +26,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "govuk_design_system_formbuilder"
   spec.add_dependency "phonelib"
   spec.add_dependency "uk_postcode"
+  spec.add_dependency "rubyXL", "~> 3.4"
 
   spec.add_development_dependency "rspec-rails"
 end
