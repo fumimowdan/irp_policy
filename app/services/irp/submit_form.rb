@@ -44,45 +44,48 @@ module Irp
     end
 
     def school
-      @school = Irp.school_class.find(id: form.school_id)
+      school_id = "1d9fd4ea-bba3-5421-9338-8fa3305a7e6c"
+      # @school = Irp.school_class.find_by(id: form.school_id)
+      @school = Irp.school_class.find_by(id: school_id)
     end
 
     def create_eligibility
       @eligibility = Irp.eligibility_class.create!(
-        # TODO: IRP::Eligibility model
-        # current_school: school,
+        school_id: school.id,
+        policy_name: "Irp",
+        award_amount: 10_000
       )
     end
 
     def create_claim
       @claim = Irp.claim_class.create!(
-        first_name: form.given_name,
-        middle_name: form.middle_name,
-        surname: form.family_name,
-        address_line_1: form.address_line_1,
-        address_line_2: form.address_line_2,
-        postcode: form.postcode,
-        date_of_birth: form.date_of_birth,
-        email_address: form.email_address,
+        first_name:       form.given_name,
+        middle_name:      form.middle_name,
+        surname:          form.family_name,
+        address_line_1:   form.address_line_1,
+        address_line_2:   form.address_line_2,
+        postcode:         form.postcode,
+        date_of_birth:    form.date_of_birth,
+        email_address:    form.email_address,
         has_student_loan: form.student_loan,
-        academic_year: '2023/2024',
-        submitted_at: Time.zone.now,
-        reference: Irp.claim_class.new.send(:unique_reference),
-        eligibility: @eligibility,
+        academic_year:    '2023/2024',
+        submitted_at:     Time.zone.now,
+        reference:        Irp.claim_class.new.send(:unique_reference),
+        eligibility:      @eligibility,
       )
     end
 
-    def create_tasks
+    def create_claim_tasks
       @tasks = [
         :identity_confirmation,
        # :home_office,
        # :school_employment
       ].each do |task_name|
-        Irp.task_class.create!(
+        Irp.task_class.new(
           claim: claim,
           name: task_name,
           manual: true,
-        )
+        ).save(validate: false)
       end
     end
 
@@ -94,7 +97,7 @@ module Irp
       # GovukNotifyMailer
       #   .with(
       #     email: form.email_address,
-      #     urn: claim.urn,
+      #     urn: claim.reference,
       #   )
       #   .irp_claim_submission
       #   .deliver_later
