@@ -1,11 +1,13 @@
 require "irp/version"
 require "irp/engine"
+require "irp/claim_adapter"
 
 module Irp
   mattr_accessor :claim_class
   mattr_accessor :task_class
   mattr_accessor :school_class
   mattr_accessor :config_class
+  mattr_accessor :eligibility_class
 
   def self.claim_class
     @@claim_class.constantize
@@ -22,4 +24,10 @@ module Irp
   def self.config_class
     @@config_class.constantize
   end
+
+  def self.eligibility_class
+    @@eligibility_class.constantize
+  end
+
+  extend ClaimAdapter
 end
