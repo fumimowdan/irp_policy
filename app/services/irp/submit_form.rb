@@ -44,10 +44,16 @@ module Irp
     end
 
     def create_eligibility
-      @eligibility = Irp.eligibility_class.create!(
-        school_id:    form.school.id,
-        policy_name:  "Irp",
-        award_amount: 10_000
+      @eligibility = Eligibility.create!(
+        school:        form.school,
+        award_amount:  Irp.award_amount,
+        one_year:      form.one_year,
+        subject:       form.subject,
+        visa_type:     form.visa_type,
+        start_date:    form.start_date,
+        date_of_entry: form.date_of_entry,
+        application_route: form.application_route,
+        state_funded_secondary_school: form.state_funded_secondary_school,
       )
     end
 
@@ -71,8 +77,10 @@ module Irp
 
     def create_claim_tasks
       @tasks = [
-        :home_office,
-        :school_checks,
+        :send_home_office_email,
+        :evaluate_home_office_response,
+        :send_school_email,
+        :evaluate_school_response,
       ].each do |task_name|
         Irp.task_class.new(
           claim: claim,

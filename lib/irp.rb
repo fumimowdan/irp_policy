@@ -2,13 +2,15 @@ require "irp/version"
 require "irp/engine"
 require "irp/claim_adapter"
 require "irp/admin_tasks_presenter"
+require "irp/eligibility_admin_answers_presenter"
 
 module Irp
   mattr_accessor :claim_class
   mattr_accessor :task_class
   mattr_accessor :school_class
   mattr_accessor :config_class
-  mattr_accessor :eligibility_class
+  mattr_accessor :award_amount
+  mattr_accessor :admin_base_controller_class
 
   def self.claim_class
     @@claim_class.constantize
@@ -26,8 +28,8 @@ module Irp
     @@config_class.constantize
   end
 
-  def self.eligibility_class
-    @@eligibility_class.constantize
+  def self.admin_base_controller_class
+    @@admin_base_controller_class.constantize
   end
 
   extend ClaimAdapter

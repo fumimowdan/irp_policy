@@ -1,0 +1,12 @@
+en:
+  irp:
+    admin:
+      task_questions:
+        send_home_office_email:
+          title: Have you sent the email to the Home office with the UAS template attached to it?
+        evaluate_home_office_response:
+          title: Has the claimant passed the home office checks?
+        send_school_email:
+          title: Start school checks
+        evaluate_school_response:
+          title: Has the claimant employment details been successfully verified?

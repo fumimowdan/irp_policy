@@ -5,11 +5,5 @@ module Irp
     def initialize(claim)
       @claim = claim
     end
-
-    def school_checks
-      [
-        ["contact school", "Email"]
-      ]
-    end
   end
 end
