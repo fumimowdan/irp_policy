@@ -99,13 +99,7 @@ module Irp
     end
 
     def send_applicant_email
-      # GovukNotifyMailer
-      #   .with(
-      #     email: form.email_address,
-      #     urn: claim.reference,
-      #   )
-      #   .irp_claim_submission
-      #   .deliver_later
+      Irp.claim_mailer_class.submitted(@claim).deliver_later
     end
   end
 end
