@@ -62,6 +62,7 @@ module Irp
         first_name:       form.given_name,
         middle_name:      form.middle_name,
         surname:          form.family_name,
+        payroll_gender:   form.sex,
         address_line_1:   form.address_line_1,
         address_line_2:   form.address_line_2,
         postcode:         form.postcode,
@@ -69,6 +70,9 @@ module Irp
         email_address:    form.email_address,
         has_student_loan: form.student_loan,
         academic_year:    form.academic_year,
+        # TODO: create migration on claim to add cols
+        # nationality:      form.nationality,
+        # passport_number:  form.passport_number,
         submitted_at:     Time.zone.now,
         reference:        Irp.claim_class.new.send(:unique_reference),
         eligibility:      @eligibility,
