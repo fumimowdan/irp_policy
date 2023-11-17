@@ -31,7 +31,7 @@ module Irp
 
     def update_session(service)
       session["irp_claim_id"] = service.claim.id
-      session.delete("form_id")
+      session.delete("irp_form_id")
     end
 
     def redirect_to_root_path_when_no_form

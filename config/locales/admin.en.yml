@@ -1,5 +1,13 @@
 en:
   irp:
+    policy_acronym: IRP
+    policy_short_name: International Relocation Program
+    claim_description: to get your international relocation grant
+    claim_subject: International Relocation Program
+    claim_amount_description: Payment you will receive
+    award_description: "claim payment"
+    support_email_address: "irp@education.gov.uk"
+
     admin:
       task_questions:
         send_home_office_email:

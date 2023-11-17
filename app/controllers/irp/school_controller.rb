@@ -20,6 +20,10 @@ module Irp
 
     private
 
+    def current_school_form
+      @current_school_form ||= SchoolForm.find_by(id: session["irp_school_form_id"])
+    end
+
     def current_step
       @step ||= SchoolStepFlow.current_step(current_form, params[:name])
       redirect_to(irp.root_path) unless @step
