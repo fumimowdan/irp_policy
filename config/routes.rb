@@ -18,9 +18,9 @@ Irp::Engine.routes.draw do
 
   get "/report/:claim_id", to: "reports#show", as: "report"
 
-  # constraints(Irp::SchoolStepFlow) do
-  #   get "/school/:name", to: "school#new", as: "school"
-  #   post "/school/:name", to: "school#create"
-  #   patch "/school/:name", to: "school#update"
-  # end
+  constraints(Irp::SchoolStepFlow) do
+    get "/school/:name", to: "school#new", as: "school"
+    post "/school/:name", to: "school#create"
+    patch "/school/:name", to: "school#update"
+  end
 end
