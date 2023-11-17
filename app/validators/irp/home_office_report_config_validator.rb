@@ -2,12 +2,12 @@
 # config:
 #    {
 #      worksheet_name: "Data",
-#      header_mapping: {
-#        "ID (Mandatory)"               => %w[urn],
-#        "Full Name/ Organisation Name" => %w[applicants.given_name applicants.middle_name applicants.family_name],
-#        "DOB"                          => %w[applicants.date_of_birth],
-#        "Nationality"                  => %w[applicants.nationality],
-#        "Passport Number"              => %w[applicants.passport_number],
+#      header_mappings: {
+#        "ID (Mandatory)"               => %w[reference],
+#        "Full Name/ Organisation Name" => %w[first_name middle_name surname],
+#        "DOB"                          => %w[date_of_birth],
+#        "Nationality"                  => %w[nationality],
+#        "Passport Number"              => %w[passport_number],
 #      }
 #    }
 #

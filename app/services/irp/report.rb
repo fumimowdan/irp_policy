@@ -1,3 +1,5 @@
+require 'rubyXL'
+
 module Irp
   class Report
 
