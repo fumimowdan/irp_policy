@@ -4,5 +4,6 @@ module Irp
     def closed; end
     def sitemap; end
     def ineligible; end
+    def invalid_link; end
   end
 end

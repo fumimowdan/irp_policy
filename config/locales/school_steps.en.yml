@@ -1,0 +1,28 @@
+en:
+  steps:
+    school_verify:
+      question: Are you the best person to verify employment records?
+      hint: This can be done by the headteacher or HR staff member
+      answers:
+        'yes':
+          text: 'Yes'
+        'no':
+          text: 'No'
+    school_employment_start_date:
+      question: Has the claimant started is employment on 77-77-77
+      answers:
+        'yes':
+          text: 'Yes'
+        'no':
+          text: 'No'
+    school_subject:
+      question: Is the claimant currenly teaching at least 50% of the time
+      answers:
+        'yes':
+          text: 'Yes'
+        'no':
+          text: 'No'
+    school_identify_best_person:
+      question: Provide details of the best person
+ 
+       

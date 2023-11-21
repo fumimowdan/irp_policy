@@ -15,17 +15,25 @@ module Irp
 
     delegate :errors, to: :form
 
+    BASE_PATH = :step_path
+
     class << self
       # include Rails.application.routes.url_helpers
       include Engine.routes.url_helpers
       def path
-        step_path(name: self::ROUTE_KEY)
+        routing(name: self::ROUTE_KEY)
+      end
+
+      private
+
+      def routing(**kwargs)
+        send(self::BASE_PATH, **kwargs)
       end
     end
 
     def initialize(form)
       @form = form
-      @path = step_path(name: self.class::ROUTE_KEY)
+      @path = self.class.path # step_path(name: self.class::ROUTE_KEY)
       @fields = self.class::REQUIRED_FIELDS
       @fields = self.class::REQUIRED_FIELDS + self.class::OPTIONAL_FIELDS if self.class.const_defined?(:OPTIONAL_FIELDS)
 

@@ -11,5 +11,9 @@ module Irp
     def current_form
       @current_form ||= Form.find_by(id: session["irp_form_id"])
     end
+
+    def current_school_form
+      @current_school_form ||= SchoolForm.find_by(id: session["irp_school_form_id"])
+    end
   end
 end

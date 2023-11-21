@@ -12,6 +12,9 @@ module Irp
   mattr_accessor :award_amount
   mattr_accessor :admin_base_controller_class
   mattr_accessor :claim_mailer_class
+  mattr_accessor :claim_token_passphrase
+  mattr_accessor :claim_token_salt
+
 
   def self.claim_class
     @@claim_class.constantize
