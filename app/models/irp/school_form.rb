@@ -1,6 +1,6 @@
 module Irp
   class SchoolForm < ApplicationRecord
-    belongs_to :claim, class_name: Irp.claim_class.to_s
+    belongs_to :claim, class_name: "::#{Irp.claim_class}"
 
     def submit!
       update(submitted_at: Time.zone.now)

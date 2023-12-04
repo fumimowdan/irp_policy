@@ -63,7 +63,7 @@ module Irp
     end
 
     def single_field_steps
-      application_route_steps - [PersonalDetailsStep, EmploymentDetailsStep]
+      application_route_steps - [PersonalDetailsStep]
     end
 
     def application_route_steps

@@ -17,14 +17,18 @@ module Irp
 
     def valid?
       step.update(**parsed_params)
+Rails.logger.info("_____> #{step.valid?}, #{step.errors.inspect}")
       step.valid?
     end
 
     def success?
+
+      Rails.logger.info("success?, #{step.errors.blank?}, #{step.errors.inspect}")
       step.errors.blank?
     end
 
     def update_form!
+      Rails.logger.info("update_form!, #{parsed_params.inspect}")
       form.update(**parsed_params)
     end
 

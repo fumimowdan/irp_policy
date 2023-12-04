@@ -17,11 +17,7 @@
           card: @summary.personal_card { link_to(_1, _2) },
           rows: @summary.personal_rows
           ) %>
-      <%= govuk_summary_list(
-          card: @summary.employment_card { link_to(_1, _2) },
-          rows: @summary.employment_rows
-          ) %>
- 
+
         <%= f.govuk_submit "Submit Claim" %>
     <% end %>
   </div>
